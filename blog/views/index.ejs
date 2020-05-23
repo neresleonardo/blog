@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IHeureka</title>
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+</head>
+
+<nav>
+<ul>
+        <li><a href="/">Home</a></li>
+        <li><a href=""></a></li>
+        <li><a href=""></a></li>
+</ul>
+</nav>
+<div class="clear"></div>
+
+<div class="topo">
+     <h1>IHeureka</h1>
+</div>
+<!--------  Conteúdos  --------------->
+
+<div class="containerp">
+    <section>
+<!------------------------------------------------------------------------------>
+<% articles.forEach(article => { %>
+    <br>
+    <div  class="box"> 
+    <div class="img" >
+    </div>
+    <div class="text">
+    <h1 style="font-size:17px;"> <%= article.title %> </h1> 
+    <br>
+    <br>
+    <p>  <%= article.descricao %> </p>
+    <a href="/<%= article.slug %>"><button class="button" style="width:100px; height:40px; line-height:40px;" >Ler Artigo</button></a>
+    </div>
+    </div>
+    <br>
+    <br>
+    <hr>
+<% }) %>
+<!--------------------- Row    --------------------------------------------------------->
+    <div class="row">
+
+    <a href="/articles/page/2" style="float: right;" class="button1">Proximo</a>
+
+    </div>
+    <br><br><br><br><br><br>
+    </section>
+    
+    <!------------------------Aside------------------------------------------>
+    <aside>
+    <div class="categorias" style="text-align: center;">
+    <br>
+    <h1>Assuntos </h1>
+    <br>
+    <% categories.forEach(categories => { %>
+    <ul>
+    <li style="text-align: center;"> <a href="/categorie/<%= categories.slug %>"><%= categories.title %></a></li>
+    </ul>
+    <% }) %>
+ 
+
+ </div>
+
+</aside>
+</div>
+
+</body>
+</html>

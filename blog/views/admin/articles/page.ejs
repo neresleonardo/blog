@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artigos</title>
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+<!----------- NAV BAR----------------->
+    <nav>
+        <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+        </ul>
+        </nav>
+
+<!----------- SISTEMA --------------->
+
+<div class="clear"></div>
+
+<div class="topo">
+     <h1>IHeureka</h1>
+</div>
+<!--------  Conteúdos  --------------->
+
+<div class="containerp">
+    <section>
+<% result.articles.rows.forEach(article => { %>
+    <br>
+    <div  class="box"> 
+      <div class="img" >
+      </div>
+       <div class="text">
+        <h1 style="font-size:17px;"> <%= article.title %> </h1> 
+        <br>
+        <br>
+        <p>  <%= article.descricao %> </p>
+        <a href="/<%= article.slug %>"><button class="button" style="width:100px; height:40px; line-height:40px;" >Ler Artigo</button></a>
+       </div>
+    </div>
+    <br>
+    <br>
+    <hr>
+
+<% }) %>
+<!--------------------- Row    --------------------------------------------------------->
+<div class="row">
+    <% if(result.page > 2 ){ %>
+    <a href="/articles/page/<%= result.page - 1 %>" style="float: left;" class="button1">Voltar</a>
+    <% }else if(result.page == 2) { %>
+    <a href="/" style="float: left;" class="button1">Voltar</a>
+    <% } %>
+
+    <% if(result.next){ %>
+        <a href="/articles/page/<%= result.page + 1  %>" style="float: right;" class="button1">Proximo</a>
+    <% } %>
+
+    
+    
+
+    </div>
+    <br><br><br><br><br><br>
+</section>
+<aside>
+ <div class="categorias">
+ <br>
+ <h1 style="margin-left:10px;">Assuntos </h1>
+ <br>
+ <% categories.forEach(categories => { %>
+    <ul>
+        <li><a href="/categorie/<%= categories.slug %>"><%= categories.title %></a></li>
+    </ul>
+ <% }) %>
+ 
+
+ </div>
+
+</aside>
+</div>
+    
+</body>
+</html>

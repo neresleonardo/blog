@@ -1,0 +1,148 @@
+
+  @import url("https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap");
+
+  * {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+  }
+  
+  input,
+  select,
+  option,
+  button,
+  textarea {
+    font: 400 18px Roboto, sans-serif;
+  }
+    
+    body {
+      font: 400 14px Roboto, sans-serif;
+      background: #131217;
+      -webkit-font-smoothing: antialiased;
+    }
+  
+  .container {
+      width: 80%;
+      text-align:left;
+      margin:0 auto;
+  }
+
+
+button {
+  cursor: pointer;
+}
+
+
+
+
+form input {
+  width: 100%;
+  height: 60px;
+  color: #333;
+  border: 1px solid #dcdce6;
+  border-radius: 8px;
+  padding: 0 24px;
+}
+
+form textarea {
+  width: 100%;
+  height: 140px;
+  color: #333;
+  border: 1px solid #dcdce6;
+  border-radius: 8px;
+  padding: 16px 24px;
+  line-height: 24px;
+}
+
+
+
+.button {
+  width: 100%;
+  height: 60px;
+  background: #e02041;
+  border: 0;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: 700;
+  margin-top: 16px;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 60px;
+  transition: filter 0.2s;
+}
+
+.button1 {
+  width: 20%;
+  height: 40px;
+  background:blueviolet;
+  border: 0;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: 700;
+  margin-top: 16px;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 40px;
+  transition: filter 0.2s;
+}
+
+select {
+  width: 30%;
+  height: 40px;
+  padding-left:10px;
+  background: #e02041 ;
+  border: 0;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: 700;
+  display: inline;
+  text-align:left;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 60px;
+  transition: filter 0.2s;
+}
+
+.button:hover {
+  filter: brightness(90%);
+}
+
+nav{
+  width:100%;
+  height:50px;
+  background-color:black;
+  
+}
+
+nav ul {
+  padding:0px;
+  margin:0px;
+  list-style:none;
+  float: right;
+}
+
+nav ul li {
+  display: inline;
+  text-align: center;
+  
+}
+
+nav ul li a {
+  padding: 2px 10px;
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  margin-top: 15px;
+}
+
+/*row*/
+ 
+.row {
+  width: 100%;
+  height: 20px;
+}

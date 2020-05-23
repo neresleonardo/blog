@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Cadastre um novo Artigo</title>
+</head>
+<!---------- Corpo-------------->
+<body>
+    <div class="container">
+<!---------- Form-------------->
+        <form action="/articles/save" method="post">
+        <br><br><br>
+        <h1 style="color: white;">Cadastrar um novo Artigo</h1>
+        <br>
+
+        <input type="text" name="title" placeholder="Cadastre um novo Artigo" required>
+        <br>
+        <br>
+        <br>
+        <textarea  name="body" style="resize: vertical;" id="article" ></textarea>
+        <br>
+        <input type="text" name="descricao" required placeholder="Descrição do Artigo">
+        <br>
+        <br>
+        <select  name="category" >
+
+            <%  categories.forEach((category) => { %>
+                <option  value=" <%= category.id %> "> <%= category.title %> </option>
+            
+                <% }) %>
+        </select>
+        <button class="button" >Cadastrar</button>
+        </form>
+
+    </div>
+</body>
+<!----------  Editor -------------->
+<script src="/tinymce/tinymce.min.js" ></script>
+<script>
+
+    tinymce.init({
+        selector: "#article",
+        plugins:[
+            "advlist autolink link image lists print preview hr searchplace wordcount table powerpaste insertdatetime media save paste emoticons "
+        ]
+    })
+
+    function Checkfiles(){
+    var fup = document.getElementById('filename');
+    var fileName = fup.value;
+    var ext = fileName.substring(fileName.lastIndexOf('.') + 1);
+
+    if(ext =="jpeg" || ext=="png"){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+
+</script>
+
+</html>

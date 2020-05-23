@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Editar Artigo</title>
+</head>
+<!---------- Corpo-------------->
+<body>
+    <div class="container">
+<!---------- Form-------------->
+        <form action="/articles/update" method="post">
+        <br><br><br>
+        <h1 style="color: white;">Atualização do Artigo</h1>
+        <br>
+        <input type="hidden" value=" <%= articles.id%>" name="id">
+        <input type="text" name="title" placeholder="Cadastre um novo Artigo" value=" <%= articles.title %> " required>
+        <br>
+        <br>
+        <br>
+        <textarea  name="body" style="resize: vertical;" id="article" ></textarea>
+        <br>
+        <input type="text" value=" <%- articles.descricao %>" name="descricao" required placeholder="Descrição do Artigo">
+        <br>
+        <br>
+        <select  name="category" >
+
+            <% categories.forEach((category) => { %>
+                <option  value=" <%= category.id %> "> <%= category.title %> </option>
+            
+                <% }) %>
+        </select>
+        <button class="button" >Atualizar Artigo</button>
+        </form>
+    </div>
+
+    <div id="content" style="display: none;">
+       <%- articles.body %>
+    </div>
+</body>
+<!----------  Editor -------------->
+<script src="/tinymce/tinymce.min.js" ></script>
+<script>
+
+    tinymce.init({
+        selector: "#article",
+        plugins:[
+            "advlist autolink link image lists print preview hr searchplace wordcount table fullscreen powerpaste insertdatetime media save paste emoticons "
+        ],
+        init_instance_callback: () => {
+            tinymce.get("article").setContent($("#content").html())
+        }
+    })
+
+</script>
+
+</html>

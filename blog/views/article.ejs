@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <title>Artigo</title>
+
+    <style>
+        .container {
+            width:60%;
+            margin:0 auto;
+            text-align: justify;
+        }
+        h1 {
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">Categorias</a></li>
+                <li><a href="">Artigos</a></li>
+        </ul>
+        </nav>
+
+    <div class="container">
+        <div class="card" >
+            <br>
+            <br>
+           <h1 >  <%= article.title %></h1>
+        </div>
+        <br>
+        <br>
+        <div class="card1" style="color: white;" >
+             <%- article.body %>
+        </div>
+
+
+    </div>
+    
+</body>
+</html>

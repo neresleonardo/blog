@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Editando Categoria</title>
+</head>
+<body>
+
+    <div class="container">
+
+        <form action="/categories/update" method="post">
+        <br><br><br>
+        <h1 style="color: white;">Atualizando uma categoria</h1>
+        <br>
+
+        <input type="text" name="title" value="<%= category.title %>" placeholder="Escreva uma nova nome para sua categoria" required>
+        <input type="hidden" name="id" value="<%= category.id %>">
+        <br>
+        <button class="button" >Atualizar</button>
+        </form>
+
+    </div>
+    
+</body>
+</html>
